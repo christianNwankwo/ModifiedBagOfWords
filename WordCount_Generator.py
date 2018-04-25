@@ -2,7 +2,7 @@ import string, pandas as pd
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
-#remove countries from text
+#remove countries from text...
 #re_country = [row.split('.', 1)[1:] for row in col]
 
 #import dataset as pandas object
