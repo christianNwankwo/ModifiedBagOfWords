@@ -1,3 +1,8 @@
+#The only changes made here is to specify the filename and path to the modified vader_lexicon file
+#This is done on line 200 where the init function for the SentimentIntensityAnalyzer Class is defined
+#Specigy the modified file as the input to the function
+
+
 # coding: utf-8
 # Author: C.J. Hutto
 # Thanks to George Berry for reducing the time complexity from something like O(N^4) to O(N).

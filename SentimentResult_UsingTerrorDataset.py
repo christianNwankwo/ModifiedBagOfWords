@@ -1,34 +1,20 @@
-#import Regular and Modified vader libraries
-from  nltk.sentiment import SentimentIntensityAnalyzer as vad
+"""This Python file is used for carrying out the sentiment analysis
+    using the Modified lexicon file of the vaderSentiment Library """
+
+#import vader library linked with the modified lexicon file
 from vaderfile import SentimentIntensityAnalyzer as mod
 import pandas as pd
 
-#compare both sentiment tools
-sentiment = vad()
+#create vader object
 sentimt = mod()
 
-#import file to be analyzed
-f = open("datasetfromWimmClass.txt")
+#import dataset containing terror keywords e.g bomb
+filename = ""
+path = ""
+f = open("filename+path")
 data = f.read()
 
-# output = []
-# for row in data.split('\n')[1:]:
-#     regular = sentiment.polarity_scores(row)
-#     if regular['compound'] > 0.5:
-#         classification = "Positive"
-#     elif -0.5 < regular['compound'] < 0.5:
-#         classification = "Neutral"
-#     else:
-#         classification = "Negative"
-#     t=[row, regular['compound'], classification]
-#     output.append(t)
-#
-# headers = ['Text', 'CompoundScore', 'Classification']
-# df = pd.DataFrame(output, columns=headers)
-# df.to_csv("Regular_SentimentResult.csv")
-
 #Modified
-
 result = []
 for row in data.split('\n')[1:]:
      modified = sentimt.polarity_scores(row)
@@ -43,4 +29,8 @@ for row in data.split('\n')[1:]:
 
 headers = ['Text', 'CompoundScore', 'Classification']
 df = pd.DataFrame(result, columns=headers)
-df.to_csv("Modified_SentimentResult1.csv")
+
+#specify output location and filename to export data
+output_location = ''
+filename = ''
+df.to_csv("output_location+filename")

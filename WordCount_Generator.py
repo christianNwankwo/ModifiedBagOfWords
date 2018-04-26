@@ -1,12 +1,15 @@
+""" This python file is used for Natural Language Processing by calculating the number of occurence of each word in the
+    RAND Database of Worldwide Terrorism Incidents file. """
+
 import string, pandas as pd
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 #remove countries from text...
-#re_country = [row.split('.', 1)[1:] for row in col]
+re_country = [row.split('.', 1)[1:] for row in col]
 
 #import dataset as pandas object
-filepath = pd.read_csv("C://Users/CHRIS/GoogleDrive/atom/Pro.csv")
+filepath = pd.read_csv("Enter filename + path here")
 
 #select the text column
 column = filepath['Description']
@@ -42,4 +45,4 @@ data = pd.DataFrame(list(count.items()), columns=["Word", "Count"])
 #sort DataFrame
 dataset = data.sort_values("Count", ascending=False)
 #export to csv
-dataset.to_csv("C://Users/CHRIS/GoogleDrive/atom/WordCount1.csv")
+dataset.to_csv("Enter filename + path here")
